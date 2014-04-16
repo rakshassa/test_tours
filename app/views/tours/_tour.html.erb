@@ -1,0 +1,13 @@
+<div id="tour_<%= tour.id %>">
+	<li >	  
+	  <small>
+	    <%= link_to "Edit", edit_tour_path(tour) %>	                
+        &nbsp&nbsp&nbsp&nbsp
+        
+		  <%= link_to "Delete", tour, method: :delete,
+	                data: { confirm: "Are you sure?" }, remote: true %>
+	    &nbsp&nbsp&nbsp&nbsp               
+	  </small>	  
+	  <%= tour.name %>
+	</li>
+</div>

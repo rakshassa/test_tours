@@ -1,0 +1,14 @@
+    <%= nested_form_for @tour, :html => {:multipart => true} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      
+     
+      <%= f.label :name, "Name" %>    
+      <%= f.text_field :name, class: 'span6' %>
+
+      <br><br>
+
+      <%= f.submit "Save", class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", tours_path,  method: :get, class: "btn btn-large" %>
+            
+    <% end %>      

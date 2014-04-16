@@ -9,9 +9,9 @@ class ToursController < ApplicationController
   end
 
   def destroy    
-    @tour = Rfqform.find(params[:id])    
+    @tour = Tour.find(params[:id])    
 
-    @rfqform.destroy
+    @tour.destroy
     
     respond_to do |format|      
       format.js
@@ -20,11 +20,12 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tours_params)
+    @tour.user_id = current_user.id
 
-    if @rfqform.save
+    if @tour.save
       flash[:success] = "Created!"
       
-      redirect_to @tour
+      redirect_to edit_tour_path(@tour)
     else
       render 'new'
     end
@@ -43,7 +44,7 @@ class ToursController < ApplicationController
     
     if @tour.update_attributes(tours_params)    
       flash[:success] = "Updated"
-      redirect_to @tour
+      redirect_to tours_path
     else      
       render 'edit'
     end
@@ -53,7 +54,7 @@ class ToursController < ApplicationController
 
   private
 
-    def rfqforms_params
+    def tours_params
       params.require(:tour).permit(:name)
     end  
 

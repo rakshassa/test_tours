@@ -1,0 +1,9 @@
+<% provide(:title, 'Your Tours') %>
+<h1>Your Tours</h1>
+
+
+<%= link_to "Create a New Tour", new_tour_path, class: "btn btn-large btn-primary" %>
+
+<div id="tour_list">
+	<%= render 'tours/tours' %>
+</div>
