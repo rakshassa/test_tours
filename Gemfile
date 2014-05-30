@@ -57,7 +57,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '1.0.2'
 gem 'sprockets', '2.11.0'
 gem 'momentjs-rails'
-gem 'bootstrap-daterangepicker-rails', :git => "http://github.com/jordanbrock/bootstrap-daterangepicker-rails.git", :branch => "rails4"
+#gem 'bootstrap-daterangepicker-rails', :git => "http://github.com/jordanbrock/bootstrap-daterangepicker-rails.git", :branch => "rails4"
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

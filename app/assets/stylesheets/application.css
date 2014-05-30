@@ -11,6 +11,5 @@
  *= require_self
  *= require jquery.ui.accordion
  *= require bootstrap
- *= require daterangepicker-bs3.css
  *= require_tree .
  */
