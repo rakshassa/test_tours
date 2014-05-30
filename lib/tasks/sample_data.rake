@@ -22,7 +22,7 @@ def make_tours
 	15.times do |n|
 		tour = Tour.create!(
 			name: Faker::Lorem.words(rand(2..5)).join(' '),
-			content: Faker::Lorem.sentence(50),
+			content: Faker::Lorem.sentence(20),
 			user_id: User.first.id)
 	end
 end
