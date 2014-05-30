@@ -1,13 +1,24 @@
-<div id="tour_<%= tour.id %>">
-	<li >	  
+<div id="tour_<%= tour.id %>" class="bordered">
+	<li class="someli">	  
 	  <small>
+	  <!-- if we want to do edits, then we'll uncomment this later.
 	    <%= link_to "Edit", edit_tour_path(tour) %>	                
         &nbsp&nbsp&nbsp&nbsp
-        
-		  <%= link_to "Delete", tour, method: :delete,
-	                data: { confirm: "Are you sure?" }, remote: true %>
-	    &nbsp&nbsp&nbsp&nbsp               
+       -->
+      <div class="delete_command">
+			  <%= link_to "X", tour, method: :delete,
+		                data: { confirm: "Are you sure?" }, remote: true %>
+		    &nbsp&nbsp&nbsp&nbsp        
+	    </div>       
 	  </small>	  
-	  <%= tour.name %>
+	  
+	  <div >
+        <b class="section-heading"><%= tour.name %></b>
+        <div id="shower_<%= tour.id %>" class="jslink"  onclick="show('text_<%= tour.id %>', 'shower_<%= tour.id %>', 'hider_<%= tour.id %>')"><u>Show</u></div>
+        <div id="hider_<%= tour.id %>" class="jslink2"  onclick="hide('text_<%= tour.id %>', 'hider_<%= tour.id %>', 'shower_<%= tour.id %>')"><u>Hide</u></div>
+        <p class="maincontent" id="text_<%= tour.id %>">
+          <%= tour.content %>
+        </p>
+    </div>
 	</li>
 </div>

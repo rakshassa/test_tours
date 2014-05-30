@@ -16,12 +16,13 @@ ActiveRecord::Schema.define(version: 20140416142306) do
   create_table "tours", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tours", ["id"], name: "index_tours_on_id", using: :btree
-  add_index "tours", ["user_id"], name: "index_tours_on_user_id", using: :btree
+  add_index "tours", ["id"], name: "index_tours_on_id"
+  add_index "tours", ["user_id"], name: "index_tours_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

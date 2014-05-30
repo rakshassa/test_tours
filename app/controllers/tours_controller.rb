@@ -25,7 +25,7 @@ class ToursController < ApplicationController
     if @tour.save
       flash[:success] = "Created!"
       
-      redirect_to edit_tour_path(@tour)
+      redirect_to tours_path
     else
       render 'new'
     end
@@ -55,7 +55,7 @@ class ToursController < ApplicationController
   private
 
     def tours_params
-      params.require(:tour).permit(:name)
+      params.require(:tour).permit(:name, :content)
     end  
 
     def GetTours()
